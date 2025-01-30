@@ -43,27 +43,3 @@ jobs:
              coverage run -m pytest test.py
              continue-on-error: true
 
-      # - name: Create Project Properties file
-      #   run: |
-      #     touch sonar-project.properties
-      #     echo "sonar.projectKey=testproj" > sonar-project.properties
-      #     echo "sonar.python.coverage.reportPaths=coverage.xml" >> sonar-project.properties
-
-      # - name: SonarQube Scan
-      #   uses: sonarsource/sonarqube-scan-action@master 
-      #   with:
-      #     projectBaseDir: ./
-      #   env:  
-      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      #     SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} #OPTIONAL
-      #     SONAR_ROOT_CERT: ${{ secrets.SONAR_QA_CERT }}
-      
-      # - name: SonarQube Quality Gate check
-      #   id: sonarqube-quality-gate-check
-      #   uses: sonarsource/sonarqube-quality-gate-action@master
-      #   # Force to fail step after specific time.
-      #   timeout-minutes: 5
-      #   env:
-      #    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      #    SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }} #OPTIONAL
-      #    SONAR_ROOT_CERT: ${{ secrets.SONAR_QA_CERT }}
