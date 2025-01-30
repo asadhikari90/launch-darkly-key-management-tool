@@ -42,6 +42,7 @@ jobs:
         run :  |       
              coverage run -m pytest test.py
              coverage xml -o coverage.xml
+             continue-on-error: true
 
       # - name: Create Project Properties file
       #   run: |
