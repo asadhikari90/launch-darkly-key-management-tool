@@ -1,16 +1,16 @@
-name: Sonarqube linux Build for Python Project
+name: Linux Build for Python Project
 
 on:
-  push:
-    branches:
-      - main
+ # push:
+  #  branches:
+   #   - main
   pull_request:
     types: [opened, synchronize, reopened]
 
 
 jobs:
   build:
-    name: Sonarqube Testing
+    name: Git-Hub Action Testing
     runs-on: ubuntu-latest #Can be parametized if needed
     steps:
 
@@ -41,7 +41,6 @@ jobs:
       - name : Generate Coverage Report
         run :  |       
              coverage run -m pytest test.py
-             coverage xml -o coverage.xml
              continue-on-error: true
 
       # - name: Create Project Properties file
