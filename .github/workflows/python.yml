@@ -36,12 +36,12 @@ jobs:
       - name : Install Required Packages 
         run :  | 
              pip install pytest coverage
-             pip install requirements.txt
+         #    pip install requirements.txt
 
       - name : Generate Coverage Report
         run :  |       
              coverage run -m pytest test.py
-            # coverage xml -o coverage.xml
+             coverage xml -o coverage.xml
 
       # - name: Create Project Properties file
       #   run: |
